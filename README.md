@@ -1,6 +1,9 @@
 # 🚀 DevOps Task Manager (Flask + Docker + CI/CD + AWS)
 
+[![Docker Publish](https://github.com/Aditya09-cse/devops-task-manager/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/Aditya09-cse/devops-task-manager/actions/workflows/docker-publish.yml)
+
 A fully containerized Flask-based task management application demonstrating end-to-end DevOps practices including CI/CD automation, Docker containerization, and cloud deployment on AWS.
+
 
 ---
 
