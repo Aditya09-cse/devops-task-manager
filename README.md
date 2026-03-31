@@ -44,22 +44,41 @@ This project showcases a real-world DevOps workflow by automating the build, tes
 
 ---
 
+
 ## 🧱 Project Structure
 
 ```
-├── app/
-│   ├── app.py
-│   └── requirements.txt
-├── Dockerfile
-├── docker-compose.yml
 ├── .github/
 │   └── workflows/
-│       └── ci-cd.yml
-├── .env
-└── README.md
+│       └── docker-publish.yml   # CI/CD pipeline (build & push to Docker Hub)
+├── app/
+│   ├── static/                 # CSS, JS, assets
+│   ├── templates/              # HTML templates
+│   ├── app.py                  # Main Flask application
+│   ├── models.py               # Database models
+│   ├── requirements.txt        # Python dependencies
+│   ├── Dockerfile              # Docker image configuration
+│   ├── docker-compose.yml      # Multi-container setup
+│   └── .dockerignore           # Ignore unnecessary files in Docker build
+├── README.md
 ```
 
 ---
+
+## 🏗️ Architecture
+
+* User accesses the Flask application via browser
+* Flask app runs inside a Docker container
+* Docker Compose manages application services
+* GitHub Actions automates:
+
+  * Build Docker image
+  * Push image to Docker Hub
+* Docker image is deployed on AWS EC2
+* Application runs consistently across environments
+
+---
+
 
 ## 🚀 Getting Started
 
