@@ -19,7 +19,7 @@ jobs:
         with:
           context: ./app
           push: false
-          tags: flask-task-manager:latest
+          tags: task-manager:latest
       
       - name: login to docker hub
         uses: docker/login-action@v3
@@ -33,11 +33,11 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: docker/build-push-action@v6
         with:
-          context: ./flask-task-manager
+          context: ./app
           push: true
           tags: | 
-            ${{ secrets.DOCKERHUB_USER }}/flask-task-manager:latest
-            ${{ secrets.DOCKERHUB_USER }}/flask-task-manager:latest-${{env.SHORT_SHA}}
+            ${{ secrets.DOCKERHUB_USER }}/task-manager:latest
+            ${{ secrets.DOCKERHUB_USER }}/task-manager:latest-${{env.SHORT_SHA}}
         
         
 
