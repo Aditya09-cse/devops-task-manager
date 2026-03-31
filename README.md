@@ -91,9 +91,9 @@ This project showcases a real-world DevOps workflow by automating the build, tes
 ### ▶️ Run Locally
 
 ```bash
-git clone https://github.com/your-username/devops-task-manager.git
+git clone https://github.com/Aditya09-cse/devops-task-manager.git
 cd devops-task-manager
-docker-compose up --build
+docker compose up --build
 ```
 
 App will be available at:
