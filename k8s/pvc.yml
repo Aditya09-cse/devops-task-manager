@@ -1,0 +1,14 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: flask-app-pvc
+  namespace: aditya-namespace
+spec:
+  storageClassName: manual
+
+  accessModes: 
+  - ReadWriteOnce
+
+  resources:  
+    requests:
+      storage: 2Gi

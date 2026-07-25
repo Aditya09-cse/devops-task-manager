@@ -1,0 +1,15 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: flask-app-pv
+spec:
+  storageClassName: manual
+
+  capacity:
+    storage: 2Gi
+
+  accessModes:
+    - ReadWriteOnce
+
+  hostPath:
+    path: /data/flask-app

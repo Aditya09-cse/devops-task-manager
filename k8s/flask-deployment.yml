@@ -1,5 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: flask-task-deployment
   namespace: aditya-namespace
@@ -8,6 +9,7 @@ metadata:
 
 spec:
   replicas: 2
+
   selector:
     matchLabels:
       app: flask-task-manager
@@ -19,14 +21,21 @@ spec:
 
     spec:
       containers:
-      - name: flask-task-manager
-        image: aditya0910/flask-task-manager:latest
+        - name: flask-task-manager
+          image: aditya0910/flask-task-manager:latest
 
-        ports:
-        - containerPort: 5000
+          ports:
+            - containerPort: 5000
 
-        env:
-        - name: DATABASE_URL
-          value: postgresql://postgres:postgres@postgres-service:5432/tasksdb
+          env:
+            - name: DATABASE_URL
+              value: postgresql://postgres:postgres@postgres-service:5432/tasksdb
 
-        
+          volumeMounts:
+            - name: flask-storage
+              mountPath: /app/data
+
+      volumes:
+        - name: flask-storage
+          persistentVolumeClaim:
+            claimName: flask-app-pvc
